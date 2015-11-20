@@ -1,13 +1,23 @@
+#+MultiViews would allow Apache to match example.com/mypage to /mypage.php, so the file extension isn't required. -MultiViews does the opposite
 Options -MultiViews
+
+#-Indexes prevents uses from viewing & exploring directories with their browsers if there's no index(.html || .php) file to serve. +Indexes would do the opposite.
 Options -Indexes
 
 RewriteEngine On
 RewriteBase /public
 
+#RewriteCond %{ENV:REDIRECT_STATUS} ^. would match any redirect status more than one character long, not sure what ^$ does
 RewriteCond %{ENV:REDIRECT_STATUS} ^$
 
+#If directory doesn't exist
 RewriteCond %{REQUEST_FILENAME} !-d
+
+#If file doesn't exist doesn't exist
 RewriteCond %{REQUEST_FILENAME} !-f
+
+#If symbolic link doesn't exist
 RewriteCond %{REQUEST_FILENAME} !-l
 
+#Redirect all file requests (if it's not to a real file, directory or symbolic link) to index.php and pass the URL as a parameter to it with url as its key
 RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
