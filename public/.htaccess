@@ -7,7 +7,7 @@ Options -Indexes
 RewriteEngine On
 RewriteBase /public
 
-#RewriteCond %{ENV:REDIRECT_STATUS} ^. would match any redirect status more than one character long, not sure what ^$ does
+#RewriteCond %{ENV:REDIRECT_STATUS} ^. would match any HTTP status (200, 404, etc) more than one character long, not sure what ^$ does
 RewriteCond %{ENV:REDIRECT_STATUS} ^$
 
 #If requested URL isn't a directory that exist
