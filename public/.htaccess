@@ -10,13 +10,13 @@ RewriteBase /public
 #RewriteCond %{ENV:REDIRECT_STATUS} ^. would match any redirect status more than one character long, not sure what ^$ does
 RewriteCond %{ENV:REDIRECT_STATUS} ^$
 
-#If directory doesn't exist
+#If requested URL isn't a directory that exist
 RewriteCond %{REQUEST_FILENAME} !-d
 
-#If file doesn't exist doesn't exist
+#If requested URL isn't a file that exists
 RewriteCond %{REQUEST_FILENAME} !-f
 
-#If symbolic link doesn't exist
+#If requested URL isn't a symbolic link that exists
 RewriteCond %{REQUEST_FILENAME} !-l
 
 #Redirect all file requests (if it's not to a real file, directory or symbolic link) to index.php and pass the URL as a parameter to it with url as its key
