@@ -5,7 +5,7 @@ Options -MultiViews
 Options -Indexes
 
 RewriteEngine On
-RewriteBase /public
+RewriteBase /
 
 #RewriteCond %{ENV:REDIRECT_STATUS} ^. would match any HTTP status (200, 404, etc) more than one character long, not sure what ^$ does
 RewriteCond %{ENV:REDIRECT_STATUS} ^$
