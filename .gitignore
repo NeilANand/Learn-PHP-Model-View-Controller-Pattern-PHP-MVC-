@@ -2,4 +2,4 @@
 /vendor
 
 #Twig
-/cache
+/app/cache
