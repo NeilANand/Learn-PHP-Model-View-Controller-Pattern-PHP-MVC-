@@ -5,7 +5,7 @@ class View{
 
   protected $twig;
 
-  public function __construct($file, $data){
+  public function __construct($file, $data = null){
     $this->file = $file;
     $this->data = $data;
 
