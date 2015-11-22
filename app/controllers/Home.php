@@ -1,6 +1,6 @@
 <?php
-class Home{
+class Home extends Controller{
   public function index($name, $mood){
-    echo "{$name} is {$mood}";
+    $this->view("home/index", []);
   }
 }
