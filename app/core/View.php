@@ -10,10 +10,7 @@ class View{
     $this->data = $data;
 
     $twigLoader = new Twig_Loader_Filesystem(INC_ROOT . "/app/views", "__main__");
-    $this->twig = new Twig_Environment($twigLoader,
-      [
-        "cache" => INC_ROOT . "/app/cache"
-      ]);
+    $this->twig = new Twig_Environment($twigLoader);
   }
 
   public function __toString(){
