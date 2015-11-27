@@ -1,1 +1,1 @@
-Hello {{ name }}
+Hello {{ name }} you are {{ mood }}
