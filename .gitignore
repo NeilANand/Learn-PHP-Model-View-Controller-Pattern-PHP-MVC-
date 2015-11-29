@@ -3,3 +3,6 @@
 
 #Twig
 /app/cache
+
+#Vagrant
+/.vagrant
