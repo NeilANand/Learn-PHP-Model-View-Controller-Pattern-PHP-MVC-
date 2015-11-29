@@ -8,5 +8,7 @@ class Users extends Controller{
     if($id){
       $user = $userModel->find($id);
     }
+
+    $this->view("users/profile", []);
   }
 }
