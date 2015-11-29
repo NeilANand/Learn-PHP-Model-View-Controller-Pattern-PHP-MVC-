@@ -1,6 +1,8 @@
 <?php
 class Users extends Controller{
   public function get($id = null){
-    echo $id;
+    $userModel = $this->model("user");
+
+    var_dump($userModel);
   }
 }
