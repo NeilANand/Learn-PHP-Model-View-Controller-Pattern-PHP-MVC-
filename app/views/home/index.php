@@ -5,7 +5,7 @@
 
     <title>Website</title>
 
-    <link rel="stylesheet" href="global.css" />
+    <link rel="stylesheet" href="{{ ASSET_ROOT }}/css/global.css" />
   </head>
 
   <body>
