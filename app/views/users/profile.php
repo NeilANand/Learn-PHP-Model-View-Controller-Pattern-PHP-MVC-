@@ -7,7 +7,9 @@
   </head>
 
   <body>
-    <h2>{{ user.username }}'s profile</h2>
-    <p>Email: {{ user.email }}</p>
+    {% if user %}
+      <h2>{{ user.username }}'s profile</h2>
+      <p>Email: {{ user.email }}</p>
+    {% endif %}
   </body>
 </html>
