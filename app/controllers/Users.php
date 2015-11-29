@@ -9,6 +9,8 @@ class Users extends Controller{
       $user = $userModel->find($id);
     }
 
-    $this->view("users/profile", []);
+    $this->view("users/profile", [
+      "user" => $user
+    ]);
   }
 }
