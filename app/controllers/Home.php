@@ -3,10 +3,10 @@ class Home extends Controller{
   public function index($name = ""){
     $user = $this->model("user");
 
-    var_dump($user);
+    $user->name = $name;
 
     $this->view("home/index", [
-      "name" => $name
+      "name" => $user->name
     ]);
   }
 }
