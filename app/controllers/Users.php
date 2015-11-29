@@ -5,7 +5,6 @@ class Users extends Controller{
 
     if($id){
       $user = $userModel->find($id);
-      var_dump($user);
     }
   }
 }
