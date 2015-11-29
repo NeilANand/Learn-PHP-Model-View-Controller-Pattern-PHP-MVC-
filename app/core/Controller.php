@@ -5,4 +5,10 @@ class Controller{
 
     echo $view;
   }
+
+  public function model($modelName){
+    require "../app/models/" . ucfirst($modelName) . ".php";
+
+    return new $modelName();
+  }
 }
