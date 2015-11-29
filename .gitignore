@@ -5,4 +5,4 @@
 /app/cache
 
 #Vagrant
-/.vagrant
+.vagrant
