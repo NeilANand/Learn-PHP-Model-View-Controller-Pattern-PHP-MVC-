@@ -4,17 +4,21 @@
     <meta charset="utf-8">
 
     <title>Website</title>
+
+    <link rel="stylesheet" href="global.css" />
   </head>
 
   <body>
-    <header class="main">
-      <h1>Welcome to the home/index view</h1>
-    </header>
+    <div class="content">
+      <header class="main">
+        <h1>Welcome to the home/index view</h1>
+      </header>
 
-    <p>Below is an example of how you pass parameters into the application</p>
+      <p>Below is an example of how you pass parameters into the application</p>
 
-    <code>/home/index/[name]/[mood]</code>
+      <code>/home/index/[name]/[mood]</code>
 
-    <p>{{ name }} is {{ mood }}</p>
+      <p>{{ name }} is {{ mood }}</p>
+    </div>
   </body>
 </html>
