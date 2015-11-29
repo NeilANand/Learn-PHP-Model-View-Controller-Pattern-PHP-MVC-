@@ -7,7 +7,7 @@
   </head>
 
   <body>
-    <h2>x's profile</h2>
-    <p>Email: y</p>
+    <h2>{{ user.username }}'s profile</h2>
+    <p>Email: {{ user.email }}</p>
   </body>
 </html>
