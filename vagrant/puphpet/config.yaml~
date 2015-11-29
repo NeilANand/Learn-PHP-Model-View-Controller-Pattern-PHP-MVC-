@@ -3,15 +3,15 @@ vagrantfile:
     vm:
         box: puphpet/ubuntu1404-x64
         box_url: puphpet/ubuntu1404-x64
-        hostname: udemy.puphpet
+        hostname: bushwackers.vagrant
         memory: '512'
         cpus: '1'
         chosen_provider: virtualbox
         network:
             private_network: 192.168.56.101
             forwarded_port:
-                vflnp_ar4xr7zd05o7:
-                    host: '5777'
+                vflnp_wk7bqwurre4w:
+                    host: '9563'
                     guest: '22'
         post_up_message: ''
         provider:
@@ -33,8 +33,8 @@ vagrantfile:
                     - '--hiera_config /vagrant/puphpet/puppet/hiera.yaml'
                     - '--parser future'
         synced_folder:
-            vflsf_gzkk6jwne3o1:
-                source: ../
+            vflsf_ji77ded9ivsd:
+                source: ../../bushwackers-sin.dev/public
                 target: /var/www
                 sync_type: default
                 smb:
@@ -95,7 +95,7 @@ nginx:
         proxy_buffers: '4 256k'
     upstreams: {  }
     vhosts:
-        nxv_jng9uhabk00t:
+        nxv_khifh7hchui3:
             server_name: awesome.dev
             server_aliases:
                 - www.awesome.dev
@@ -115,10 +115,10 @@ nginx:
             rewrite_to_https: '1'
             spdy: '1'
             locations:
-                nxvl_q6l8k6olis4k:
+                nxvl_a41zjtbvfs34:
                     location: /
                     autoindex: 'off'
-                    internal: 'false'
+                    internal: 'off'
                     try_files:
                         - $uri
                         - $uri/
@@ -126,10 +126,10 @@ nginx:
                     fastcgi: ''
                     fastcgi_index: ''
                     fastcgi_split_path: ''
-                nxvl_elsai4o7s2ck:
+                nxvl_n3vp3i97q2b6:
                     location: '~ \.php$'
                     autoindex: 'off'
-                    internal: 'false'
+                    internal: 'off'
                     try_files:
                         - $uri
                         - $uri/
@@ -154,11 +154,11 @@ apache:
         - proxy_fcgi
         - rewrite
     vhosts:
-        av_talubdft2x9m:
-            servername: project.dev
+        av_5wng265m9pch:
+            servername: bushwackers.dev
             serveraliases:
-                - www.project.dev
-            docroot: /var/www/public
+                - www.bushwackers.dev
+            docroot: /var/www
             port: '80'
             setenv:
                 - 'APP_ENV dev'
@@ -171,8 +171,8 @@ apache:
             ssl_protocol: ''
             ssl_cipher: ''
             directories:
-                avd_y6eq05dy38qf:
-                    path: /var/www/awesome
+                avd_3jgcbqbgpdgo:
+                    path: /var/www
                     options:
                         - Indexes
                         - FollowSymlinks
@@ -183,7 +183,7 @@ apache:
                         - 'all granted'
                     custom_fragment: ''
                     files_match:
-                        avdfm_pg95su55xofl:
+                        avdfm_169zl1i7r1sx:
                             path: \.php$
                             sethandler: 'proxy:fcgi://127.0.0.1:9000'
                             custom_fragment: ''
@@ -198,6 +198,8 @@ php:
             - cli
             - intl
             - mcrypt
+            - gd
+            - curl
         pear: {  }
         pecl: {  }
     ini:
@@ -205,10 +207,12 @@ php:
         error_reporting: '-1'
         session.save_path: /var/lib/php/session
         date.timezone: UTC
+        upload_max_filesize: 10M
+        post_max_size: 10M
     fpm_ini:
         error_log: /var/log/php-fpm.log
     fpm_pools:
-        phpfp_wp1hg9kn98z5:
+        phpfp_5k4dle1b4i22:
             ini:
                 prefix: www
                 listen: '127.0.0.1:9000'
@@ -281,16 +285,16 @@ mysql:
         override_options: {  }
     adminer: 0
     users:
-        mysqlnu_5p8hhukdt904:
-            name: project
+        mysqlnu_ucy7issnta38:
+            name: bushsin
             password: password
     databases:
-        mysqlnd_wbloccxgc3lh:
-            name: dbname
+        mysqlnd_q0k2uwlu9om0:
+            name: bushsin
             sql: ''
     grants:
-        mysqlng_0m7ox3k04vcj:
-            user: dbuser
+        mysqlng_3ce6pvoheqpe:
+            user: bushsin
             table: '*.*'
             privileges:
                 - ALL
@@ -302,15 +306,15 @@ mariadb:
         override_options: {  }
     adminer: 0
     users:
-        mariadbnu_n2z0ra8rshc9:
+        mariadbnu_0nifwtl4ssvu:
             name: dbuser
             password: '123'
     databases:
-        mariadbnd_cqmccve0w1vh:
+        mariadbnd_f5f6slft77cq:
             name: dbname
             sql: ''
     grants:
-        mariadbng_6r19hbrttluc:
+        mariadbng_1wrtp5z4z5au:
             user: dbuser
             table: '*.*'
             privileges:
