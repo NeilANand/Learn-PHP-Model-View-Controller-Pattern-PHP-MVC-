@@ -7,7 +7,12 @@ class Controller{
   }
 
   public function model($modelName){
-    require "../app/models/" . ucfirst($modelName) . ".php";
+    $modelFile = "../app/models/" . ucfirst($modelName) . ".php";
+
+    if(file_exists($modelFile))
+      require $modelFile;
+    else
+      return false;
 
     return new $modelName();
   }
