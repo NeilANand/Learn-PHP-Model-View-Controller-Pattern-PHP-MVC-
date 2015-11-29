@@ -11,6 +11,7 @@ class View{
 
     $twigLoader = new Twig_Loader_Filesystem(INC_ROOT . "/app/views", "__main__");
     $this->twig = new Twig_Environment($twigLoader);
+    $this->twig->addGlobal("ASSET_ROOT", ASSET_ROOT);
   }
 
   public function __toString(){
