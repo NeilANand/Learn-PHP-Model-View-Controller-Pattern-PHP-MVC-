@@ -8,6 +8,9 @@
     "classmap":[
       "app/core",
       "app/models"
+    ],
+    "files": [
+      "app/database.php"
     ]
   }
 }
