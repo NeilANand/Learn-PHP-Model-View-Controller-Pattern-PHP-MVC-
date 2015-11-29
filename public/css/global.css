@@ -1,0 +1,13 @@
+body{
+  font: 1em Arial, sans-serif;
+}
+
+p{
+  margin-bottom: 20px;
+}
+
+.content{
+  width: 100%;
+  max-width: 800px;
+  margin: 30px auto;
+}
