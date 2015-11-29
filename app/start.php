@@ -9,7 +9,7 @@ define("INC_ROOT", dirname(__DIR__));
 //This is the line shown in the example but as I'm running this in a vagrant box with a domain (project.dev) it won't work for me
 //define("ASSET_ROOT", "http://" . $_SERVER["HTTP_HOST"] . str_replace($_SERVER["DOCUMENT_ROOT"], "", str_replace("\\", "/", INC_ROOT)) . "/public");
 
-define("ASSET_ROOT", "http://" . $_SERVER["HTTP_HOST"]);
+define("ASSET_ROOT", "http://" . $_SERVER["HTTP_HOST"] . "/public");
 
 //Composer autoloader which 'links' to all class files
 require INC_ROOT . "/vendor/autoload.php";
